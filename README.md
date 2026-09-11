@@ -1,5 +1,8 @@
 # Custom C++ TCP/UDP Port Scanner ("Sniffer")
 
+> [!IMPORTANT]
+> **Environment Requirement:** This project is designed specifically for **Linux / POSIX environments** (WSL2, native Linux, or Docker containers). It directly relies on low-level Linux raw socket capabilities (`SOCK_RAW`, `IP_HDRINCL`) and POSIX networking headers (`<netinet/ip.h>`, `<netinet/tcp.h>`, `<sys/socket.h>`), which are not supported by native Windows Winsock.
+
 A high-performance, low-level network port scanner and packet sniffer written in C++ from scratch. This project demonstrates systems-level network programming, raw socket manipulation, manual packet assembly, and protocol-level traffic analysis.
 
 ---
@@ -84,6 +87,26 @@ A high-performance, low-level network port scanner and packet sniffer written in
 > ```bash
 > sudo iptables -A OUTPUT -p tcp --tcp-flags RST RST -j DROP
 > ```
+
+### 🚀 Building & Running (WSL2 / Linux)
+
+1. **Install required build tools (one-time):**
+   ```bash
+   sudo apt update && sudo apt install -y build-essential cmake
+   ```
+
+2. **Configure and compile:**
+   ```bash
+   cd /mnt/c/Projects/port_scanner
+   mkdir -p build && cd build
+   cmake ..
+   make
+   ```
+
+3. **Run binary with root / raw socket permissions:**
+   ```bash
+   sudo ./port_scanner
+   ```
 
 ---
 

@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.14)
 project(port_scanner VERSION 1.0 LANGUAGES CXX)
 
+# Enforce Linux / POSIX environment
+if(WIN32)
+    message(FATAL_ERROR "This project requires a Linux / POSIX environment (WSL2, Linux VM, or Docker) due to raw socket (SOCK_RAW) and POSIX network header dependencies (<netinet/ip.h>, <netinet/tcp.h>). Please run CMake inside WSL or a Linux container.")
+endif()
+
 # Require C++17
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
