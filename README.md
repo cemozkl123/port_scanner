@@ -114,14 +114,14 @@ A high-performance, low-level network port scanner and packet sniffer written in
 
 We will proceed iteratively across the following phases:
 
-- [ ] **Phase 1: Environment & Build System Setup**
-  - Verify compiler toolchain (GCC/Clang, CMake, WSL2 environment).
-  - Setup directory structure (`src/`, `include/`, `tests/`, `CMakeLists.txt`).
+- [x] **Phase 1: Environment & Build System Setup**
+  - [x] Verify compiler toolchain (GCC/Clang, CMake, WSL2 environment).
+  - [x] Setup directory structure (`src/`, `include/`, `tests/`, `CMakeLists.txt`).
 
-- [ ] **Phase 2: Checksum & Network Utilities**
-  - Implement Internet Checksum algorithm (RFC 1071).
-  - Implement TCP pseudo-header calculation.
-  - IP string to network binary address conversion helpers.
+- [x] **Phase 2: Checksum & Network Utilities**
+  - [x] Implement Internet Checksum algorithm (RFC 1071).
+  - [x] Implement TCP pseudo-header calculation.
+  - [x] IP string to network binary address conversion helpers.
 
 - [ ] **Phase 3: Packet Crafting Engine**
   - IPv4 header builder (`struct iphdr`).
