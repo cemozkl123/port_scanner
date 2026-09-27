@@ -23,6 +23,8 @@ include_directories(include)
 # Define source files
 set(SOURCES
     src/main.cpp
+    src/checksum.cpp
+    src/net_utils.cpp
 )
 
 # Executable target
