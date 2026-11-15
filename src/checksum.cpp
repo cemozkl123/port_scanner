@@ -75,4 +75,4 @@ uint16_t calculate_tcp_checksum(
     return calculate_checksum(buffer.data(), total_buf_len);
 }
 
-} // namespace scanner
+}

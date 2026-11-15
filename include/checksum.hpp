@@ -12,11 +12,11 @@ namespace scanner {
  * @brief TCP Pseudo-header used in TCP checksum calculation according to RFC 793.
  */
 struct __attribute__((packed)) TcpPseudoHeader {
-    uint32_t src_ip;        // Source IP address (in network byte order)
-    uint32_t dst_ip;        // Destination IP address (in network byte order)
+    uint32_t src_ip;        // Source IP address
+    uint32_t dst_ip;        // Destination IP address
     uint8_t  reserved{0};   // Reserved byte (must be 0)
     uint8_t  protocol{6};   // Protocol number (IPPROTO_TCP = 6)
-    uint16_t tcp_length{0}; // TCP segment length (TCP header + payload) in network byte order
+    uint16_t tcp_length{0}; // TCP segment length
 };
 
 /**
